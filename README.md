@@ -6,7 +6,7 @@ Implement real-time communication between multiple clients and a server.
 ### Problem:
 With HTTP requests, the server cannot initiate a request to the client (browser). ie HTTP requests are always initiated by the client (browser). This means we cannot push data to the client easily. HTTP requests are not persistent. They are transactional.
 
-Q: Can we accomplish real time updates without a persistent conn? (ie without WebSockets?)
+Q: Can we accomplish real time updates without a persistent conn? (ie without WebSockets?)<br>
 A: Yes, with polling. We can use setInterval or setTimeout for this.
 
 ### Challenges with Polling:
@@ -16,7 +16,7 @@ A: Yes, with polling. We can use setInterval or setTimeout for this.
  - When polling, can you do other stuff?
  - Request deltas
 
-Q: Any other (better) solutions?
+Q: Any other (better) solutions?<br>
 A: Long polling "Comet"
 
 One connection (singleton) that stays hanging b/c the server doesn't respond until it has a new message (payload) for that client.
