@@ -32,7 +32,7 @@ Like with any TCP connection, the underlying library (browser) has to support a 
 - receive
 - close
 
-### Link to Code
+### Link to Original Code (Thanks Fabio!)
 
 This demo and the code for it was taken from Fabio (Toronto instructor).
 
