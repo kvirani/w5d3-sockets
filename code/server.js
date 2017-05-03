@@ -13,3 +13,38 @@ const app = express()
   () => console.log(`Listening on ${PORT}`)
 );
 
+// Websocket logic
+
+const wss = new ws.Server({ server: app });
+
+let sharedContent = '';
+
+function broadcast(data) {
+  for(let client of wss.clients) {
+    client.send(data);
+  }
+}
+
+function handleMessage(data) {
+  console.log('Message received!! ', data);
+  sharedContent = data;
+  broadcast(data);
+}
+
+function handleConnection(client) {
+  console.log('New client connected!');
+  console.log('We are at ' + wss.clients.size + ' clients!');
+  client.on('message', handleMessage);
+  client.send(sharedContent);
+}
+
+wss.on('connection', handleConnection);
+
+
+
+
+
+
+
+
+
