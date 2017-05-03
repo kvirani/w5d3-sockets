@@ -34,5 +34,7 @@ Like with any TCP connection, the underlying library (browser) has to support a 
 
 ### Link to Code
 
-This demo and the code for it was taken from Fabio (Toronto instructor). You can see his lecture notes and code here: <https://github.com/fzero/lhl-lectures/tree/master/w5d3-websockets>)
+This demo and the code for it was taken from Fabio (Toronto instructor).
+
+You can see his lecture notes and code here: <https://github.com/fzero/lhl-lectures/tree/master/w5d3-websockets>. Thanks Fabio!
 
