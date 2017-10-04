@@ -1,8 +1,9 @@
 console.log('Running App...');
 
-const ws = new WebSocket("ws://10.30.10.167:3000/");
+const ws = new WebSocket("ws://localhost:3000/");
 
-function setupApp() {
+function setupApp(evt) {
+  console.log('Established connection!', evt);
 
   $('#typehere').on('input', function() {
     const val = $(this).val();
@@ -10,18 +11,12 @@ function setupApp() {
     ws.send(val);
     console.log('-----');
   })
-
 }
 
-ws.onopen = function(evt) {
-  console.log('Established connection!', evt);
-  setupApp();
-}
+ws.addEventListener('open', setupApp);
 
-ws.onmessage = function(evt) {
+ws.addEventListener('message', function(evt) {
   console.log('On message called! ', evt);
   $('#typehere').val(evt.data)
-}
-
-
+});
 

@@ -15,13 +15,17 @@ const app = express()
 
 // Websocket logic
 
+// const wss = new ws.Server({ server: app });
+
 const wss = new ws.Server({ server: app });
 
 let sharedContent = '';
 
 function broadcast(data) {
   for(let client of wss.clients) {
-    client.send(data);
+    if (client.readyState === ws.OPEN) {
+      client.send(data);
+    }
   }
 }
 
