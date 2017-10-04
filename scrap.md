@@ -9,8 +9,8 @@
 // Client
 
 // const ws = new WebSocket("ws://localhost:3000");
-// ws.onopen = f(ev)
-// ws.onmessage = f(ev)
+// ws.addEventListener('open', f(evt) {...})
+// ws.addEventListener('message', f(evt) { evt.data })
 ```
 
 ```js
