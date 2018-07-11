@@ -96,7 +96,7 @@ Like with any TCP connection, the underlying library (browser) has to support a 
 - receive
 - close
 
-You can find the code we wrote in the code directly in this repo.
+You can find the code we wrote in the code directly in this repo. A reminder that this code is NOT practical for creating a collaborative document. It's quite simple and doesn't handle error situations or other edge cases.
 
 ### Link to Original Code (Credit to Fabio!)
 
